@@ -1,0 +1,256 @@
+/* Desktop Header */
+
+@media only screen and (min-width: 900px) {
+  .header_home {
+    display: grid;
+    grid-template-columns: [left_header] 1fr [mid_header] 1fr [right_header] 1fr;
+    padding: 0.5em;
+    background-color: lightcyan;
+  }
+
+  .header_not_home {
+    border-bottom: lightgrey 0.5px dotted;
+    display: grid;
+    grid-template-columns: [left_header] 1fr [mid_header] 1fr [right_header] 1fr;
+    padding: 0.5em;
+    margin-bottom: 2em;
+  }
+
+  .right_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mid_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* header links */
+
+  .header_link {
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .header_link:hover {
+    border-bottom: 1px solid red;
+  }
+
+  .header_link_active {
+    border-bottom: 1px solid red;
+  }
+
+  .menu_icon {
+    display: none;
+  }
+
+  .mobile_logo {
+    display: none;
+  }
+
+  .mobile_search {
+    display: none;
+  }
+
+  .login_button_desktop {
+    border: none;
+    padding: 0.6em 1.3em 0.6em 1.3em;
+    margin: 0.5em;
+    margin-right: 2em;
+    text-decoration: none;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+  }
+
+  .login_button_mobile {
+    display: none;
+  }
+
+  .header_photo_wrap_mobile {
+    display: none;
+  }
+}
+
+/* Mobile Header */
+
+@media only screen and (max-width: 900px) {
+  .header_home {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    background-color: lightcyan;
+  }
+
+  .header_not_home {
+    border-bottom: lightgrey 0.5px dotted;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    margin-bottom: 2em;
+  }
+
+  .right_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 33%;
+  }
+
+  .left_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 33%;
+  }
+
+  .mid_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 33%;
+  }
+
+  .search_home {
+    padding: 0.5em;
+    padding-top: 1em;
+    align-self: end;
+    background-color: lightcyan;
+    animation: appearIn 0.5s;
+  }
+
+  .search_not_home {
+    padding: 0.5em;
+    padding-top: 1em;
+    align-self: end;
+    animation: appearIn 0.5s;
+  }
+
+  .search_icon {
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0.2em;
+  }
+
+  .hamburger {
+    font-size: 2em;
+    padding: 0.2em;
+    cursor: pointer;
+  }
+
+  .close_button {
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0.2em;
+  }
+
+  @keyframes appearIn {
+    from {
+      transform: scale(0, 0);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+
+  /* header links */
+
+  .header_links_mobile {
+    display: flex;
+    padding: 0.6em;
+    margin-bottom: 1em;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+  }
+
+  .dropdown_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1em;
+    cursor: pointer;
+    background-color: lightcyan;
+    align-items: center;
+  }
+
+  .dropdown_not_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .header_link_active {
+    border-bottom: 1px solid red;
+  }
+
+  .mobile_search {
+    display: flex;
+  }
+
+  .desktop_logo {
+    display: none;
+  }
+
+  .desktop_links {
+    display: none;
+  }
+
+  .search_box {
+    display: none;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .login_button_mobile {
+    border: none;
+    padding: 0.6em 1.3em 0.6em 1.3em;
+    margin: 0.5em;
+    margin-left: 1.3em;
+    margin-right: 2em;
+    text-decoration: none;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+  }
+
+  .login_button_desktop {
+    display: none;
+  }
+
+  .header_photo_wrap_desk {
+    display: none;
+  }
+}
+
+/* header photo */
+.header_photo {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
