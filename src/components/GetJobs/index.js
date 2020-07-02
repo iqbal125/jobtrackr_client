@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import axios from 'axios';
 import JobList from '../JobList';
 import styles from './getjobs.module.css';
@@ -48,9 +48,9 @@ const GetJobs = () => {
                   })
                 : null}
               <div class={styles.addJob}>
-                <Link to="/add-job" class={styles.addJobsButton}>
+                <div onClick={() => navigate('/app/addjob')} class={styles.addJobsButton}>
                   Add Job
-                </Link>
+                </div>
               </div>
             </div>
           </div>

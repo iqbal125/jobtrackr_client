@@ -5,6 +5,10 @@ import Profile from '../Profile';
 import AuthContext from '../../utils/auth_context';
 import Auth from '../Authentication/auth';
 
+import AddJobForm from '../AddJobForm';
+import EditJobForm from '../EditJobForm';
+import JobDetail from '../JobDetail';
+
 const Routes = () => {
   const context = useContext(AuthContext);
 
@@ -27,10 +31,11 @@ const Routes = () => {
 
   return (
     <Router>
-      <PrivateRoute path="/app/profile" component={Profile} />
-      <PrivateRoute path="/app/addjob" component={Profile} />
-      <PrivateRoute path="/app/job/:id" component={Profile} />
-      <PrivateRoute path="/app/editjob/:id" component={Profile} />
+      {/*<PrivateRoute path="/app/profile" component={Profile} />*/}
+      <Profile path="app/profile" />
+      <AddJobForm path="/app/addjob" />
+      <EditJobForm path="/app/editjob/:id" />
+      <JobDetail path="/app/job/:id" />
       <Auth path="/app/login" />
     </Router>
   );

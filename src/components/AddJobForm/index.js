@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { navigate } from 'gatsby';
 import { Formik } from 'formik';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
@@ -151,9 +151,9 @@ const AddJobForm = () => {
               <button type="submit" className={styles.form_button} disabled={isSubmitting}>
                 Submit
               </button>
-              <Link to="/profile" className={styles.form_button}>
+              <div onClick={() => navigate('/app/profile')} className={styles.form_button}>
                 Cancel
-              </Link>
+              </div>
             </div>
           </form>
         )}

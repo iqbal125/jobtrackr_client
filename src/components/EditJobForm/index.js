@@ -42,7 +42,7 @@ const EditJobForm = ({ job }) => {
     };
 
     axios
-      .put(`${process.env.REACT_APP_SERVER_URL}/api/users/updateJob/${id}`, data)
+      .put(`${process.env.GATSBY_SERVER_URL}/api/users/updateJob/${id}`, data)
       .then(res => handleRes(res))
       .catch(err => handleErr(err));
   };
@@ -151,8 +151,9 @@ const EditJobForm = ({ job }) => {
               <button type="submit" className={styles.form_button} disabled={isSubmitting}>
                 Submit
               </button>
-              ///fix cancel button
-              <div className={styles.form_button}>Cancel</div>
+              <div onClick={() => navigate('/app/profile')} className={styles.form_button}>
+                Cancel
+              </div>
             </div>
           </form>
         )}
