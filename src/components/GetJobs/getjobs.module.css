@@ -1,0 +1,108 @@
+/* 
+    JOBS
+*/
+
+.addJobsButton {
+  border-radius: 100px;
+  background-color: #9fbaff;
+  padding: 15px 48px;
+  cursor: pointer;
+  border: none;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.addJobsButton:hover {
+  color: white;
+  background-color: navy;
+}
+
+.jobContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  text-align: left;
+}
+
+.jobList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  color: rgb(60, 60, 90, 1);
+  margin-bottom: 20px;
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.jobHeader h4 {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  width: 75%;
+}
+
+.info span {
+  font-weight: 600;
+  padding-right: 5px;
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.jobHeader h4 {
+  align-self: center;
+}
+
+.addJob {
+  justify-self: flex-end;
+  margin: 50px 0 0;
+}
+
+.jobButton {
+  border-radius: 5px;
+  font-size: 2.75rem;
+  margin: 15px;
+  padding: 5px 0;
+  cursor: pointer;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.jobButton:nth-child(2) {
+  color: rgba(255, 10, 0, 0.8);
+}
+
+.jobButton:nth-child(1) {
+  color: rgba(0, 100, 255, 0.8);
+}
+
+.jobButton:hover {
+  color: rgb(60, 60, 90, 1);
+}

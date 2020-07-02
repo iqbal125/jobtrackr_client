@@ -1,0 +1,124 @@
+.addJobContainer {
+  margin: 100px auto;
+}
+.addJobContainer h3 {
+  margin-bottom: 50px;
+}
+
+.error_container {
+  height: 30px;
+}
+
+.error_text {
+  color: red;
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.form_date_picker {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 50px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.form_input {
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  margin-top: 3px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 50px;
+  justify-self: center;
+  font-size: 18px;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: deepskyblue;
+}
+
+.form_buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form_button {
+  border-radius: 100px;
+  background-color: #9fbaff;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-weight: 700;
+  font-size: 12px;
+  width: 20%;
+}
+
+.form_button:nth-child(2) {
+  background-color: #ccc;
+  margin-left: 20px;
+  height: 38px;
+  padding-top: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.form_button:hover {
+  background-color: navy;
+  color: white;
+}
+
+.input_label {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #777;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.loading_background {
+  z-index: 9;
+  background-color: white;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

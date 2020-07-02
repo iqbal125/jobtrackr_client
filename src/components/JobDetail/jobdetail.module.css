@@ -1,0 +1,50 @@
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.detailContainer h3 {
+  margin: 60px 0 40px;
+}
+.detail {
+  text-align: left;
+  margin: 0 auto 20px;
+}
+
+.detail h5 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.detail p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.detailButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailButton {
+  border-radius: 100px;
+  background-color: #9fbaff;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-weight: 700;
+  font-size: 12px;
+  width: 95px;
+  margin-right: 30px;
+  height: 40px;
+  padding-top: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.detailButton:nth-child(1) {
+  background-color: #ccc;
+  margin-left: 30px;
+}

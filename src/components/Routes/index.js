@@ -28,6 +28,9 @@ const Routes = () => {
   return (
     <Router>
       <PrivateRoute path="/app/profile" component={Profile} />
+      <PrivateRoute path="/app/addjob" component={Profile} />
+      <PrivateRoute path="/app/job/:id" component={Profile} />
+      <PrivateRoute path="/app/editjob/:id" component={Profile} />
       <Auth path="/app/login" />
     </Router>
   );
