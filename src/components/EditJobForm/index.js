@@ -15,11 +15,15 @@ const user = {
   id: 1
 };
 
-const EditJobForm = ({ job }) => {
+const EditJobForm = ({ location }) => {
+  const { state } = location;
+  const { job } = state;
   const { id } = job;
   const [loading, setLoading] = useState(false);
   const [resMessage, setresMessage] = useState(null);
   const context = useContext(AuthContext);
+
+  console.log(state);
 
   const handleSubmit = values => {
     setLoading(true);

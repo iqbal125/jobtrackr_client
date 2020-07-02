@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { navigate } from 'gatsby';
+import { navigate, Link } from 'gatsby';
 import axios from 'axios';
 import JobList from '../JobList';
 import styles from './getjobs.module.css';

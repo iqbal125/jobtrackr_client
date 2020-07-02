@@ -40,11 +40,8 @@ const JobList = ({ job }) => {
             <Link to={{ pathname: `/job/${job.id}`, state: { job: job } }}>{job.position}</Link>
           </h4>
           <div class={styles.jobButton}>
-            <Link
-              class={styles.jobButton}
-              to={{ pathname: `/editjob/${job.id}`, state: { job: job } }}
-            >
-              <i class="fas fa-pen-square"></i>
+            <Link class={styles.jobButton} to={`/app/editjob/${job.id}`} state={{ job }}>
+              <i class="fas fa-pen-square"></i>Edit
             </Link>
             <button class={styles.jobButton} onClick={deleteJob}>
               <i class="fas fa-times-circle"></i>
