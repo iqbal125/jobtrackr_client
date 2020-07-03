@@ -73,6 +73,7 @@ const Auth = () => {
           <div className={styles.loading_background}></div>
         </>
       )}
+      <h1>Sign-Up or Login to JobTrackr</h1>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={context.firebase.auth()} />
     </div>
   );

@@ -1,11 +1,10 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import { navigate, Link } from 'gatsby';
 import axios from 'axios';
 import styles from './getjobs.module.css';
 import MaterialTable from 'material-table';
 
-import { forwardRef } from 'react';
-
+// Find out which icons actually need.
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -57,22 +56,22 @@ const user = {
 //    Edit
 //  </Link>
 
-const columns = [
-  { title: 'Position', field: 'position' },
-  { title: 'Company', field: 'company' },
-  { title: 'Date Applied', field: 'date_applied', type: 'date' },
-  { title: 'Status', field: 'status' },
-  { title: 'Location', field: 'location' },
-  { title: 'Point of Contact', field: 'point_of_contact' },
-  { title: 'POC Email', field: 'poc_email' },
-  { title: 'POC Phone', field: 'poc_phone' },
-  { title: 'Notes', field: 'notes' }
-];
-
-const jobsPlaceHolder = [{ position: '' }];
-
 const GetJobs = () => {
   const [jobs, setJobs] = useState(null);
+
+  const columns = [
+    { title: 'Position', field: 'position' },
+    { title: 'Company', field: 'company' },
+    { title: 'Date Applied', field: 'date_applied', type: 'date' },
+    { title: 'Status', field: 'status' },
+    { title: 'Location', field: 'location' },
+    { title: 'Point of Contact', field: 'point_of_contact' },
+    { title: 'POC Email', field: 'poc_email' },
+    { title: 'POC Phone', field: 'poc_phone' },
+    { title: 'Notes', field: 'notes' }
+  ];
+
+  const jobsPlaceHolder = [{ position: '' }];
 
   // change  to await async
   const deleteJob = () => {

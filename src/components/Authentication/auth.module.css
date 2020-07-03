@@ -1,10 +1,7 @@
-.forgot_password {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .form_container {
-  width: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .loader {
