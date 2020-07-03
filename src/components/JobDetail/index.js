@@ -1,8 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./jobdetail.module.css";
+import styles from './jobdetail.module.css';
 
-const JobDetail = ({ job }) => {
+const JobDetail = ({ location }) => {
+  const { state } = location;
+  const { job } = state;
+
+  console.log(location);
+
   return (
     <div className="seven columns">
       <div className={styles.detail}>
