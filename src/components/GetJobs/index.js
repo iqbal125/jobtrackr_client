@@ -1,7 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { navigate, Link } from 'gatsby';
 import axios from 'axios';
-import JobList from '../JobList';
 import styles from './getjobs.module.css';
 import MaterialTable from 'material-table';
 
@@ -49,7 +48,14 @@ const user = {
   id: 1
 };
 
-const jobs2 = [{ Position: 'fff', Company: 'ggg', Location: 'gggg' }];
+//  <Link to={`/app/job/${job.id}`} state={{ job }}>
+//    {job.position}
+//  </Link>
+//</h4>
+//<div class={styles.jobButton}>
+//  <Link class={styles.jobButton} to={`/app/editjob/${job.id}`} state={{ job }}>
+//    Edit
+//  </Link>
 
 const columns = [
   { title: 'Position', field: 'position' },
@@ -63,8 +69,30 @@ const columns = [
   { title: 'Notes', field: 'notes' }
 ];
 
+const jobsPlaceHolder = [{ position: '' }];
+
 const GetJobs = () => {
   const [jobs, setJobs] = useState(null);
+
+  // change  to await async
+  const deleteJob = () => {
+    let handleRes = res => {
+      console.log(res);
+    };
+
+    let handleErr = err => {
+      console.log(err);
+    };
+
+    let data = {
+      user_id: user.id
+    };
+
+    //axios
+    //  .delete(`${process.env.GATSBY_SERVER_URL}/api/users/deleteJob/${job.id}`, { data })
+    //  .then(res => handleRes(res))
+    //  .catch(err => handleErr(err));
+  };
 
   const fetchJobs = () => {
     let handleRes = res => {
@@ -87,20 +115,15 @@ const GetJobs = () => {
   }, []);
 
   return (
-    <div class={`nine columns ${styles.jobList}`}>
+    <div>
       <div>
-        <h5>{`${jobs ? jobs.length : 0} Total Jobs`}</h5>
-      </div>
-      {jobs
-        ? jobs.map(job => {
-            return <JobList job={job} key={jobs.id} />;
-          })
-        : null}
-      <div class={styles.addJob}>
-        <div onClick={() => navigate('/app/addjob')} class={styles.addJobsButton}>
-          Add Job
-        </div>
-        <MaterialTable icons={tableIcons} columns={columns} data={jobs} title="Jobs" />
+        <div onClick={() => navigate('/app/addjob')}>Add Job</div>
+        <MaterialTable
+          icons={tableIcons}
+          columns={columns}
+          data={jobs ? jobs : jobsPlaceHolder}
+          title="Jobs"
+        />
       </div>
     </div>
   );

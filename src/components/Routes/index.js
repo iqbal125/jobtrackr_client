@@ -7,7 +7,6 @@ import Auth from '../Authentication/auth';
 
 import AddJobForm from '../AddJobForm';
 import EditJobForm from '../EditJobForm';
-import JobDetail from '../JobDetail';
 
 const Routes = () => {
   const context = useContext(AuthContext);
@@ -35,7 +34,6 @@ const Routes = () => {
       <Profile path="app/profile" />
       <AddJobForm path="/app/addjob" />
       <EditJobForm path="/app/editjob/:id" />
-      <JobDetail path="/app/job/:id" />
       <Auth path="/app/login" />
     </Router>
   );
