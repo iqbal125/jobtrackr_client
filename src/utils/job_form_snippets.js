@@ -50,7 +50,7 @@ export const formFields = [
     labelInnerText: 'Application Status',
     initialValue: 'Just Applied',
     type: 'select',
-    options: ['Phone Interview', 'Take Home Project', 'On-Site Interview', 'Offer']
+    options: ['Just Applied', 'Phone Interview', 'Take Home Project', 'On-Site Interview', 'Offer']
   },
   {
     name: 'point_of_contact',

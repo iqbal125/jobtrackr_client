@@ -117,6 +117,7 @@ const AddJobForm = () => {
                       return (
                         <select
                           id={field.name}
+                          className={styles.form_input}
                           name={field.name}
                           value={values[field.name]}
                           onChange={handleChange}
@@ -129,6 +130,7 @@ const AddJobForm = () => {
                       return (
                         <textarea
                           id={field.name}
+                          className={styles.form_input + ' ' + styles.form_textarea}
                           name={field.name}
                           value={values[field.name]}
                           onChange={handleChange}
@@ -140,18 +142,16 @@ const AddJobForm = () => {
                       return <>Error rendering form input.</>;
                   }
                 })()}
-                <div className={styles.error_container}>
-                  {errors[field.name] && touched[field.name] && (
-                    <p className={styles.error_text}>{errors[field.name]}</p>
-                  )}
-                </div>
+                {errors[field.name] && touched[field.name] && (
+                  <p className={styles.error_text}>{errors[field.name]}</p>
+                )}
               </React.Fragment>
             ))}
             <div className={styles.form_buttons}>
               <button type="submit" className={styles.form_button} disabled={isSubmitting}>
                 Submit
               </button>
-              <div onClick={() => navigate('/app/profile')} className={styles.form_button}>
+              <div onClick={() => navigate('/app/profile')} className={styles.cancel_button}>
                 Cancel
               </div>
             </div>

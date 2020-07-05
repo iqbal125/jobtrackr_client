@@ -120,6 +120,7 @@ const EditJobForm = ({ location }) => {
                       return (
                         <select
                           id={field.name}
+                          className={styles.form_input}
                           name={field.name}
                           value={values[field.name]}
                           onChange={handleChange}
@@ -133,6 +134,7 @@ const EditJobForm = ({ location }) => {
                         <textarea
                           id={field.name}
                           name={field.name}
+                          className={styles.form_input + ' ' + styles.form_textarea}
                           value={values[field.name]}
                           onChange={handleChange}
                           onBlur={handleBlur}
@@ -155,7 +157,7 @@ const EditJobForm = ({ location }) => {
               <button type="submit" className={styles.form_button} disabled={isSubmitting}>
                 Submit
               </button>
-              <div onClick={() => navigate('/app/profile')} className={styles.form_button}>
+              <div onClick={() => navigate('/app/profile')} className={styles.cancel_button}>
                 Cancel
               </div>
             </div>
