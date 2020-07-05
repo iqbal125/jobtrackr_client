@@ -4,6 +4,7 @@ import axios from 'axios';
 import styles from './getjobs.module.css';
 import MaterialTable from 'material-table';
 
+import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
@@ -44,12 +45,7 @@ const GetJobs = () => {
     { title: 'Position', field: 'position' },
     { title: 'Company', field: 'company' },
     { title: 'Date Applied', field: 'date_applied', type: 'date' },
-    { title: 'Status', field: 'status' },
-    { title: 'Location', field: 'location' },
-    { title: 'Point of Contact', field: 'point_of_contact' },
-    { title: 'POC Email', field: 'poc_email' },
-    { title: 'POC Phone', field: 'poc_phone' },
-    { title: 'Notes', field: 'notes' }
+    { title: 'Status', field: 'status' }
   ];
 
   const jobsPlaceHolder = [{ position: '' }];
@@ -74,6 +70,19 @@ const GetJobs = () => {
     fetchJobs();
   }, []);
 
+  const DetailPanel = ({ rowData }) => {
+    console.log(rowData);
+    return (
+      <div className={styles.detail_panel}>
+        <div>POC Name: {rowData.poc_name}</div>
+        <div>POC Email: {rowData.poc_email}</div>
+        <div>POC Phone: {rowData.poc_phone}</div>
+        <div>Location: {rowData.location}</div>
+        <div>Notes: {rowData.notes}</div>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div>
@@ -84,6 +93,13 @@ const GetJobs = () => {
             columns={columns}
             data={jobs ? jobs : jobsPlaceHolder}
             title="Jobs"
+            detailPanel={[
+              {
+                tooltip: 'Show More Info',
+                icon: AddBox,
+                render: rowData => <DetailPanel rowData={rowData} />
+              }
+            ]}
           />
         </div>
       </div>
