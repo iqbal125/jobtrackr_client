@@ -16,10 +16,10 @@ const user = {
 
 const AddJobForm = () => {
   const [loading, setLoading] = useState(false);
-  const [resMessage, setresMessage] = useState(null);
 
   const handleSubmit = values => {
     setLoading(true);
+    window.scroll(0, 0);
 
     let data = {
       user_id: user.id,
@@ -28,22 +28,15 @@ const AddJobForm = () => {
 
     console.log(data);
 
-    let handleRes = res => {
-      setLoading(false);
-      console.log(res);
-      setresMessage('Successfully Submitted Job');
-    };
-
-    let handleErr = err => {
-      console.log(err);
-      setLoading(false);
-      setresMessage('Request Failed Please Try Again');
+    let handleRes = () => {
+      setTimeout(() => setLoading(false), 500);
+      setTimeout(() => navigate('/app/profile'), 510);
     };
 
     axios
       .post(`${process.env.GATSBY_SERVER_URL}/api/users/addJob`, data)
-      .then(res => handleRes(res))
-      .catch(err => handleErr(err));
+      .then(handleRes)
+      .catch(err => console.log(err));
   };
 
   // generate default values for Formik
@@ -59,7 +52,7 @@ const AddJobForm = () => {
           <div className={styles.loading_background}></div>
         </>
       )}
-      <h3>{resMessage}</h3>
+
       <Formik
         initialValues={formikInitialValues}
         validationSchema={AddJobSchema}

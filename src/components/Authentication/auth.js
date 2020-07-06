@@ -32,7 +32,6 @@ const Auth = () => {
   };
 
   const saveProfile = authResult => {
-    console.log(authResult);
     setLoading(true);
 
     context.firebase

@@ -11,7 +11,6 @@ export const authReducer = (state, action) => {
       let user = action.payload;
       //set 10 hour expires time
       let expiresIn = 36000000 * 1000 + new Date().getTime();
-      console.log(user);
 
       localStorage.setItem('expiresIn', JSON.stringify(expiresIn));
       localStorage.setItem('user', JSON.stringify(user));

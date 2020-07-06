@@ -12,6 +12,10 @@ import Clear from '@material-ui/icons/Clear';
 import FirstPage from '@material-ui/icons/FirstPage';
 import LastPage from '@material-ui/icons/LastPage';
 import Search from '@material-ui/icons/Search';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
 const tableIcons = {
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
@@ -23,23 +27,30 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />)
 };
 
+const useStyles = makeStyles(theme => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+  }
+}));
+
 const user = {
   email: 'mock@email.com',
   username: 'username',
   id: 1
 };
 
-//  <Link to={`/app/job/${job.id}`} state={{ job }}>
-//    {job.position}
-//  </Link>
-//</h4>
-//<div class={styles.jobButton}>
-//  <Link class={styles.jobButton} to={`/app/editjob/${job.id}`} state={{ job }}>
-//    Edit
-//  </Link>
-
 const GetJobs = () => {
+  const classes = useStyles();
   const [jobs, setJobs] = useState(null);
+  const [isOpen, setOpen] = useState(false);
 
   const columns = [
     { title: 'Position', field: 'position' },
@@ -50,15 +61,18 @@ const GetJobs = () => {
 
   const jobsPlaceHolder = [{ position: '' }];
 
-  const deleteJob = () => {
+  const deleteJob = rowData => {
     let data = {
       user_id: user.id
     };
 
-    //axios
-    //  .delete(`${process.env.GATSBY_SERVER_URL}/api/users/deleteJob/${job.id}`, { data })
-    //  .then(res => console.log(res))
-    //  .catch(err => console.log(err));
+    const newArr = jobs.filter(job => job.id !== rowData.id);
+    setJobs(newArr);
+
+    axios
+      .delete(`${process.env.GATSBY_SERVER_URL}/api/users/deleteJob/${rowData.id}`, { data })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   const fetchJobs = async () => {
@@ -83,23 +97,54 @@ const GetJobs = () => {
     );
   };
 
+  const ModalBody = (
+    <div className={classes.paper}>
+      <h2 id="simple-modal-title">Text in a modal</h2>
+      <p id="simple-modal-description">
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      </p>
+    </div>
+  );
+
+  const detailPanelArr = [
+    {
+      tooltip: 'Show More Info',
+      icon: AddBox,
+      render: rowData => <DetailPanel rowData={rowData} />
+    }
+  ];
+
+  const actionsArr = [
+    {
+      icon: EditIcon,
+      tooltip: 'Edit Job',
+      onClick: (_, rowData) => {
+        navigate(`/app/editjob/${rowData.id}`, { state: { rowData } });
+      }
+    },
+    {
+      icon: DeleteIcon,
+      tooltip: 'Delete Job',
+      onClick: (_, rowData) => deleteJob(rowData)
+    }
+  ];
+
   return (
     <div>
       <div>
         <button onClick={() => navigate('/app/addjob')}>Add Job</button>
+        <button onClick={() => setOpen(true)}>Add Job</button>
         <div className={styles.table_container}>
+          <Modal open={isOpen} onClose={() => setOpen(false)}>
+            {ModalBody}
+          </Modal>
           <MaterialTable
             icons={tableIcons}
             columns={columns}
             data={jobs ? jobs : jobsPlaceHolder}
             title="Jobs"
-            detailPanel={[
-              {
-                tooltip: 'Show More Info',
-                icon: AddBox,
-                render: rowData => <DetailPanel rowData={rowData} />
-              }
-            ]}
+            actions={actionsArr}
+            detailPanel={detailPanelArr}
           />
         </div>
       </div>

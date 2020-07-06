@@ -17,38 +17,30 @@ const user = {
 
 const EditJobForm = ({ location }) => {
   const { state } = location;
-  const { job } = state;
+  const { rowData } = state;
+  const job = rowData;
   const { id } = job;
   const [loading, setLoading] = useState(false);
-  const [resMessage, setresMessage] = useState(null);
   const context = useContext(AuthContext);
-
-  console.log(state);
 
   const handleSubmit = values => {
     setLoading(true);
+    window.scroll(0, 0);
 
     let data = {
       user_id: user.id,
       ...values
     };
 
-    let handleRes = res => {
-      setLoading(false);
-      console.log(res);
-      setresMessage('Successfully Edited Job');
-    };
-
-    let handleErr = err => {
-      console.log(err);
-      setLoading(false);
-      setresMessage('Request Failed Please Try Again');
+    let handleRes = () => {
+      setTimeout(() => setLoading(false), 500);
+      setTimeout(() => navigate('/app/profile'), 510);
     };
 
     axios
       .put(`${process.env.GATSBY_SERVER_URL}/api/users/updateJob/${id}`, data)
-      .then(res => handleRes(res))
-      .catch(err => handleErr(err));
+      .then(handleRes)
+      .catch(err => console.log(err));
   };
 
   return (
@@ -59,7 +51,6 @@ const EditJobForm = ({ location }) => {
           <div className={styles.loading_background}></div>
         </>
       )}
-      <h3>{resMessage}</h3>
       <Formik
         initialValues={{
           ...job,
@@ -145,11 +136,10 @@ const EditJobForm = ({ location }) => {
                       return <>Error rendering form input.</>;
                   }
                 })()}
-                <div className={styles.error_container}>
-                  {errors[field.name] && touched[field.name] && (
-                    <span className={styles.error_text}>{errors[field.name]}</span>
-                  )}
-                </div>
+
+                {errors[field.name] && touched[field.name] && (
+                  <span className={styles.error_text}>{errors[field.name]}</span>
+                )}
               </React.Fragment>
             ))}
 
