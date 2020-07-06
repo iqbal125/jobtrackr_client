@@ -7,3 +7,14 @@
 .detail_panel {
   padding: 2em;
 }
+
+.modal {
+  position: absolute;
+  width: 400px;
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
