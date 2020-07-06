@@ -26,6 +26,13 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />)
 };
 
+const columns = [
+  { title: 'Position', field: 'position' },
+  { title: 'Company', field: 'company' },
+  { title: 'Date Applied', field: 'date_applied', type: 'date' },
+  { title: 'Status', field: 'status' }
+];
+
 const user = {
   email: 'mock@email.com',
   username: 'username',
@@ -35,26 +42,22 @@ const user = {
 const GetJobs = () => {
   const [jobs, setJobs] = useState(null);
   const [isOpen, setOpen] = useState(false);
+  const [deleteJob, setDeleteJob] = useState(null);
 
-  const columns = [
-    { title: 'Position', field: 'position' },
-    { title: 'Company', field: 'company' },
-    { title: 'Date Applied', field: 'date_applied', type: 'date' },
-    { title: 'Status', field: 'status' }
-  ];
+  const handleModal = () => (isOpen ? setOpen(false) : setOpen(true));
 
-  const jobsPlaceHolder = [{ position: '' }];
-
-  const deleteJob = rowData => {
+  const handleDeleteJob = () => {
     let data = {
       user_id: user.id
     };
 
-    const newArr = jobs.filter(job => job.id !== rowData.id);
+    const newArr = jobs.filter(job => job.id !== deleteJob.id);
     setJobs(newArr);
 
+    setOpen(false);
+
     axios
-      .delete(`${process.env.GATSBY_SERVER_URL}/api/users/deleteJob/${rowData.id}`, { data })
+      .delete(`${process.env.GATSBY_SERVER_URL}/api/users/deleteJob/${deleteJob.id}`, { data })
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -69,7 +72,6 @@ const GetJobs = () => {
   }, []);
 
   const DetailPanel = ({ rowData }) => {
-    console.log(rowData);
     return (
       <div className={styles.detail_panel}>
         <div>POC Name: {rowData.poc_name}</div>
@@ -83,12 +85,15 @@ const GetJobs = () => {
 
   const ModalBody = (
     <div className={styles.modal}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
+      <h2>Confirm Delete Job?</h2>
+      <div className={styles.button_row}>
+        <button onClick={handleDeleteJob}>Delete</button>
+        <button onClick={handleModal}>Cancel</button>
+      </div>
     </div>
   );
+
+  const jobsPlaceHolder = [{ position: '' }];
 
   const detailPanelArr = [
     {
@@ -109,7 +114,10 @@ const GetJobs = () => {
     {
       icon: DeleteIcon,
       tooltip: 'Delete Job',
-      onClick: (_, rowData) => deleteJob(rowData)
+      onClick: (_, rowData) => {
+        setDeleteJob(rowData);
+        setOpen(true);
+      }
     }
   ];
 
@@ -117,7 +125,6 @@ const GetJobs = () => {
     <div>
       <div>
         <button onClick={() => navigate('/app/addjob')}>Add Job</button>
-        <button onClick={() => setOpen(true)}>Add Job</button>
         <div className={styles.table_container}>
           <Modal open={isOpen} onClose={() => setOpen(false)}>
             {ModalBody}
