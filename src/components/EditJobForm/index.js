@@ -9,26 +9,21 @@ import { formValidationSchema as EditJobSchema, formFields } from '../../utils/j
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './editjobform.module.css';
 
-const user = {
-  email: 'mock@email.com',
-  username: 'username',
-  id: 1
-};
-
 const EditJobForm = ({ location }) => {
   const { state } = location;
   const { rowData } = state;
   const job = rowData;
   const { id } = job;
   const [loading, setLoading] = useState(false);
-  const context = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
+  const { user } = authState;
 
   const handleSubmit = values => {
     setLoading(true);
     window.scroll(0, 0);
 
     let data = {
-      user_id: user.id,
+      user_id: user.id.user,
       ...values
     };
 

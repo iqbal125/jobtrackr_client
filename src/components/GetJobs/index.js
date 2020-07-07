@@ -1,9 +1,10 @@
-import React, { useEffect, useState, forwardRef } from 'react';
+import React, { useEffect, useContext, useState, forwardRef } from 'react';
 import { navigate, Link } from 'gatsby';
 import axios from 'axios';
 import styles from './getjobs.module.css';
 import MaterialTable from 'material-table';
 import moment from 'moment';
+import AuthContext from '../../utils/auth_context';
 
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -35,22 +36,19 @@ const columns = [
   { title: 'Last Status Update', field: 'last_status_change', type: 'date' }
 ];
 
-const user = {
-  email: 'mock@email.com',
-  username: 'username',
-  id: 1
-};
-
 const GetJobs = () => {
   const [jobs, setJobs] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const [deleteJob, setDeleteJob] = useState(null);
+  const { authState } = useContext(AuthContext);
+  const { user } = authState;
+  const { id } = user;
 
   const handleModal = () => (isOpen ? setOpen(false) : setOpen(true));
 
   const handleDeleteJob = () => {
     let data = {
-      user_id: user.id
+      user_id: id.user
     };
 
     const newArr = jobs.filter(job => job.id !== deleteJob.id);
@@ -65,7 +63,7 @@ const GetJobs = () => {
   };
 
   const fetchJobs = async () => {
-    let results = await axios.get(`${process.env.GATSBY_SERVER_URL}/api/users/getJob/${user.id}`);
+    let results = await axios.get(`${process.env.GATSBY_SERVER_URL}/api/users/getJob/${id.user}`);
     setJobs(results.data);
   };
 
@@ -154,7 +152,7 @@ const GetJobs = () => {
             icons={tableIcons}
             columns={columns}
             data={jobs ? jobs : jobsPlaceHolder}
-            title="Jobs"
+            title="My Jobs"
             actions={actionsArr}
             detailPanel={detailPanelArr}
           />

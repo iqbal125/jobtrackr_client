@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { navigate } from 'gatsby';
 import { Formik } from 'formik';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
-
+import AuthContext from '../../utils/auth_context';
 import styles from './addjobform.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import { formValidationSchema as AddJobSchema, formFields } from '../../utils/job_form_snippets';
 
-const user = {
-  email: 'mock@email.com',
-  username: 'username',
-  id: 1
-};
-
 const AddJobForm = () => {
   const [loading, setLoading] = useState(false);
+  const { authState } = useContext(AuthContext);
+  const { user } = authState;
+  const { id } = user;
 
   const handleSubmit = values => {
     setLoading(true);
     window.scroll(0, 0);
 
     let data = {
-      user_id: user.id,
+      user_id: id.user,
       ...values
     };
-
-    console.log(data);
 
     let handleRes = () => {
       setTimeout(() => setLoading(false), 500);
