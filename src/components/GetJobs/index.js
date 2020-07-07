@@ -3,6 +3,7 @@ import { navigate, Link } from 'gatsby';
 import axios from 'axios';
 import styles from './getjobs.module.css';
 import MaterialTable from 'material-table';
+import moment from 'moment';
 
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -31,7 +32,7 @@ const columns = [
   { title: 'Company', field: 'company' },
   { title: 'Date Applied', field: 'date_applied', type: 'date' },
   { title: 'Status', field: 'status' },
-  { title: 'Last Status Update', field: 'last_status_change' }
+  { title: 'Last Status Update', field: 'last_status_change', type: 'date' }
 ];
 
 const user = {
@@ -75,11 +76,30 @@ const GetJobs = () => {
   const DetailPanel = ({ rowData }) => {
     return (
       <div className={styles.detail_panel}>
-        <div>POC Name: {rowData.poc_name}</div>
-        <div>POC Email: {rowData.poc_email}</div>
-        <div>POC Phone: {rowData.poc_phone}</div>
-        <div>Location: {rowData.location}</div>
-        <div>Notes: {rowData.notes}</div>
+        <div>
+          <b>POC Name: </b> {rowData.poc_name}
+        </div>
+        <div>
+          <b>POC Email: </b>
+          {rowData.poc_email}
+        </div>
+        <div>
+          <b>POC Phone: </b> {rowData.poc_phone}
+        </div>
+        <div>
+          <b>Location: </b> {rowData.location}
+        </div>
+        <div>
+          <b>Last Follow-Up: </b>
+          {moment(rowData.last_followup).format('l')}
+        </div>
+        <div>
+          <b>Last Follow-Up Response: </b>
+          {moment(rowData.last_followup_response).format('l')}
+        </div>
+        <div>
+          <b>Notes:</b> {rowData.notes}
+        </div>
       </div>
     );
   };

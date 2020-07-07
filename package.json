@@ -44,6 +44,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
     "material-table": "^1.63.1",
+    "moment": "^2.27.0",
     "netlify-cms-app": "^2.9.7",
     "react": "^16.10.2",
     "react-datepicker": "^3.0.0",

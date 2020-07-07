@@ -54,7 +54,10 @@ const EditJobForm = ({ location }) => {
       <Formik
         initialValues={{
           ...job,
-          date_applied: new Date(Date.parse(job.date_applied))
+          date_applied: new Date(Date.parse(job.date_applied)),
+          last_followup_response: new Date(Date.parse(job.last_followup_response)),
+          last_followup: new Date(Date.parse(job.last_followup)),
+          last_status_change: new Date(Date.parse(job.last_status_change))
         }}
         validationSchema={EditJobSchema}
         onSubmit={handleSubmit}
