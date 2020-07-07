@@ -40,15 +40,15 @@ const GetJobs = () => {
   const [jobs, setJobs] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const [deleteJob, setDeleteJob] = useState(null);
-  const { authState } = useContext(AuthContext);
+  const context = useContext(AuthContext);
+  const { authState } = context;
   const { user } = authState;
-  const { id } = user;
 
   const handleModal = () => (isOpen ? setOpen(false) : setOpen(true));
 
   const handleDeleteJob = () => {
     let data = {
-      user_id: id.user
+      user_id: user.id.user
     };
 
     const newArr = jobs.filter(job => job.id !== deleteJob.id);
@@ -63,13 +63,17 @@ const GetJobs = () => {
   };
 
   const fetchJobs = async () => {
-    let results = await axios.get(`${process.env.GATSBY_SERVER_URL}/api/users/getJob/${id.user}`);
-    setJobs(results.data);
+    if (user) {
+      let results = await axios.get(
+        `${process.env.GATSBY_SERVER_URL}/api/users/getJob/${user.id.user}`
+      );
+      setJobs(results.data);
+    }
   };
 
   useEffect(() => {
     fetchJobs();
-  }, []);
+  }, [user]);
 
   const DetailPanel = ({ rowData }) => {
     return (
