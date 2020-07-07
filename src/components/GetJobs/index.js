@@ -30,7 +30,8 @@ const columns = [
   { title: 'Position', field: 'position' },
   { title: 'Company', field: 'company' },
   { title: 'Date Applied', field: 'date_applied', type: 'date' },
-  { title: 'Status', field: 'status' }
+  { title: 'Status', field: 'status' },
+  { title: 'Last Status Update', field: 'last_status_change' }
 ];
 
 const user = {

@@ -53,6 +53,12 @@ export const formFields = [
     options: ['Just Applied', 'Phone Interview', 'Take Home Project', 'On-Site Interview', 'Offer']
   },
   {
+    name: 'last_status_change',
+    labelInnerText: 'Last Status Change Date',
+    initialValue: null,
+    type: 'date'
+  },
+  {
     name: 'point_of_contact',
     labelInnerText: 'Point of Contact Name',
     initialValue: '',
@@ -69,6 +75,18 @@ export const formFields = [
     labelInnerText: 'Point of Contact Phone',
     initialValue: '',
     type: 'input'
+  },
+  {
+    name: 'last_followup',
+    labelInnerText: 'Last Follow-Up Date',
+    initialValue: null,
+    type: 'date'
+  },
+  {
+    name: 'last_followup_response',
+    labelInnerText: 'Last Follow-Up Response Date',
+    initialValue: null,
+    type: 'date'
   },
   {
     name: 'notes',
