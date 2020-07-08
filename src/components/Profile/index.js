@@ -73,7 +73,7 @@ const Profile = () => {
 
   useEffect(() => {
     fetchJobs();
-  }, [user]);
+  }, []);
 
   const DetailPanel = ({ rowData }) => {
     return (
