@@ -109,9 +109,13 @@ const Profile = () => {
   const ModalBody = (
     <div className={styles.modal}>
       <h2>Confirm Delete Job?</h2>
-      <div className={styles.button_row}>
-        <button onClick={handleDeleteJob}>Delete</button>
-        <button onClick={handleModal}>Cancel</button>
+      <div className={styles.modal_button_row}>
+        <button className={styles.delete_button} onClick={handleDeleteJob}>
+          Delete
+        </button>
+        <button className={styles.cancel_button} onClick={handleModal}>
+          Cancel
+        </button>
       </div>
     </div>
   );
@@ -145,23 +149,23 @@ const Profile = () => {
   ];
 
   return (
-    <div>
-      <div>
-        <button onClick={() => navigate('/app/addjob')}>Add Job</button>
-        <div className={styles.table_container}>
-          <Modal open={isOpen} onClose={() => setOpen(false)}>
-            {ModalBody}
-          </Modal>
-          <MaterialTable
-            icons={tableIcons}
-            columns={columns}
-            data={jobs ? jobs : jobsPlaceHolder}
-            title="My Jobs"
-            actions={actionsArr}
-            detailPanel={detailPanelArr}
-          />
-        </div>
-      </div>
+    <div className={styles.profile_container}>
+      <button className={styles.add_job_button} onClick={() => navigate('/app/addjob')}>
+        Add Job
+      </button>
+
+      <MaterialTable
+        icons={tableIcons}
+        columns={columns}
+        data={jobs ? jobs : jobsPlaceHolder}
+        title="My Jobs"
+        actions={actionsArr}
+        detailPanel={detailPanelArr}
+      />
+
+      <Modal open={isOpen} onClose={() => setOpen(false)}>
+        {ModalBody}
+      </Modal>
     </div>
   );
 };

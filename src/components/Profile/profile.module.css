@@ -1,19 +1,48 @@
 .profile_container {
-}
-
-.table_container {
   display: flex;
-  padding: 1.2em;
-  margin: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .detail_panel {
   padding: 2em;
 }
 
-.button_row {
+.modal_button_row {
   display: flex;
   justify-content: flex-start;
+}
+
+.add_job_button {
+  padding: 1em 2em 1em 2em;
+  margin-bottom: 3em;
+  align-self: flex-start;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.cancel_button {
+  padding: 1em;
+  margin: 1em;
+  background-color: white;
+  border: 1px solid blue;
+  color: blue;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.delete_button {
+  margin: 1em;
+  padding: 1em 2em 1em 2em;
+  background-color: orangered;
+  color: white;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .modal {
