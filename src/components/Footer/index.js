@@ -18,12 +18,6 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.right_footer}>
-            <Link to="/about">
-              <div className={styles.footer_link}>About </div>
-            </Link>
-            <Link to="/services">
-              <div className={styles.footer_link}>Services </div>
-            </Link>
             <Link to="/contact">
               <div className={styles.footer_link}>Contact</div>
             </Link>

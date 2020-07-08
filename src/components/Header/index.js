@@ -57,25 +57,11 @@ const Header = ({ props }) => {
           {/* Desktop */}
           <div className={styles.desktop_links}>
             <Link
-              to="/about"
-              className={styles.header_link}
-              activeClassName={styles.header_link_active}
-            >
-              About
-            </Link>
-            <Link
               to="/contact"
               className={styles.header_link}
               activeClassName={styles.header_link_active}
             >
               Contact
-            </Link>
-            <Link
-              to="/services"
-              className={styles.header_link}
-              activeClassName={styles.header_link_active}
-            >
-              Services
             </Link>
             <Link
               to="/blog"
@@ -161,25 +147,11 @@ const Header = ({ props }) => {
         <>
           <div className={isHome ? styles.dropdown_home : styles.dropdown_not_home}>
             <Link
-              to="/about"
-              className={styles.header_links_mobile}
-              activeClassName={styles.header_link_active}
-            >
-              About
-            </Link>
-            <Link
               to="/contact"
               className={styles.header_links_mobile}
               activeClassName={styles.header_link_active}
             >
               Contact
-            </Link>
-            <Link
-              to="/services"
-              className={styles.header_links_mobile}
-              activeClassName={styles.header_link_active}
-            >
-              Services
             </Link>
             <Link
               to="/blog"
