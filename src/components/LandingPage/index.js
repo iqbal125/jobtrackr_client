@@ -8,11 +8,6 @@ import image2 from '../../../static/uploads/wave.svg';
 import image3 from '../../../static/uploads/undraw_design_notes_8dmv.svg';
 import image5 from '../../../static/uploads/code_development_.svg';
 
-//pics
-import pic1 from '../../../static/uploads/cloud.jpg';
-import pic2 from '../../../static/uploads/database.jpg';
-import pic3 from '../../../static/uploads/healthcare.jpg';
-
 import styles from './home.module.css';
 
 const Home = () => {
@@ -62,11 +57,7 @@ const Home = () => {
               Get Started Now
             </button>
           </div>
-          <div className={styles.pic_section}>
-            <img className={styles.pic} src={pic1} alt="" />
-            <img className={styles.pic} src={pic2} alt="" />
-            <img className={styles.pic} src={pic3} alt="" />
-          </div>
+
           <div className={styles.social_bar}>
             <h3 className={styles.social_title}> Or Connect With Us on Social Just to Chat</h3>
             <SocialBar />
