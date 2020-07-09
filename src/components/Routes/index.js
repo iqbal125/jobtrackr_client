@@ -14,11 +14,12 @@ const Routes = () => {
     return new Date().getTime() < expiresAt;
   };
 
-  const PrivateRoute = ({ component: Component, location, ...rest }) => {
+  const PrivateRoute = ({ component: Component, state, location, ...rest }) => {
     if (!isTokenValid()) {
       navigate('/app/login');
       return null;
     } else {
+      console.log(state);
       return <Component {...rest} />;
     }
   };
@@ -26,8 +27,7 @@ const Routes = () => {
   return (
     <Router>
       <PrivateRoute path="/app/profile" component={Profile} />
-      {/*<Profile path="app/profile" />*/}
-      <AddJobForm path="/app/addjob" />
+      <PrivateRoute path="/app/addjob" component={AddJobForm} />
       <EditJobForm path="/app/editjob/:id" />
       <Auth path="/app/login" />
     </Router>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
 import AuthContext from '../../utils/auth_context';
 import { Formik } from 'formik';
@@ -9,7 +9,8 @@ import { formValidationSchema as EditJobSchema, formFields } from '../../utils/j
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './editjobform.module.css';
 
-const EditJobForm = ({ location }) => {
+const EditJobForm = props => {
+  const { location } = props;
   const { state } = location;
   const { rowData } = state;
   const job = rowData;
