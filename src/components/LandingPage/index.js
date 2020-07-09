@@ -10,8 +10,8 @@ import image5 from '../../../static/uploads/code_development_.svg';
 import styles from './home.module.css';
 
 const Home = () => {
-  const toContactPage = () => {
-    navigate('/contact');
+  const toLoginPage = () => {
+    navigate('/app/login');
   };
 
   const toAboutPage = () => {
@@ -22,9 +22,14 @@ const Home = () => {
     <div>
       <div className={styles.main}>
         <div className={styles.landing_hero}>
-          <h1 className={styles.value_prop}>
-            Organize and Keep track of all your Job Applications in One Place
-          </h1>
+          <div className={styles.value_prop_col}>
+            <h1 className={styles.value_prop}>
+              Organize and Keep track of all your Job Applications in One Place
+            </h1>
+            <button className={styles.value_prop_button} onClick={toLoginPage}>
+              Try For Free Now &#8594;
+            </button>
+          </div>
           <img className={styles.hero_illustration} src={image3} alt="" />
         </div>
         <div className={styles.feature1}>
@@ -47,7 +52,7 @@ const Home = () => {
         <div className={styles.bottom_cta_section}>
           <div className={styles.bottom_cta_text}>
             <h3>Get in touch to see how we can help you on your next project</h3>
-            <button className={styles.get_started_button} onClick={toContactPage}>
+            <button className={styles.get_started_button} onClick={toLoginPage}>
               Get Started Now
             </button>
           </div>

@@ -84,6 +84,7 @@
     width: 100%;
   }
 
+  /* Set Mobile Elements to None */
   .menu_icon {
     display: none;
   }
@@ -102,7 +103,7 @@
     margin: 0.5em;
     margin-right: 2em;
     text-decoration: none;
-    background-color: orangered;
+    background-color: blue;
     color: white;
     font-weight: 900;
   }
@@ -217,7 +218,6 @@
     justify-content: center;
     padding-top: 1em;
     cursor: pointer;
-    background-color: lightcyan;
     align-items: center;
   }
 
@@ -260,7 +260,7 @@
     margin-left: 1.3em;
     margin-right: 2em;
     text-decoration: none;
-    background-color: orangered;
+    background-color: blue;
     color: white;
     font-weight: 900;
   }
