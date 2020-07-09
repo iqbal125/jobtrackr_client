@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: [left_header] 1fr [mid_header] 1fr [right_header] 1fr;
     padding: 0.5em;
-    background-color: lightcyan;
   }
 
   .header_not_home {
@@ -44,14 +43,45 @@
     margin: 5px;
     text-decoration: none;
     color: black;
+    font-weight: 900;
+    font-size: 1.2em;
   }
 
-  .header_link:hover {
-    border-bottom: 1px solid red;
+  .header_link {
+    position: relative;
+  }
+
+  .header_link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .header_link:hover::before {
+    visibility: visible;
+    width: 100%;
   }
 
   .header_link_active {
-    border-bottom: 1px solid red;
+    position: relative;
+  }
+
+  .header_link_active::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    visibility: visible;
+    width: 100%;
   }
 
   .menu_icon {
@@ -93,7 +123,6 @@
     display: flex;
     flex-direction: row;
     padding: 0.5em;
-    background-color: lightcyan;
   }
 
   .header_not_home {
@@ -132,7 +161,6 @@
     padding: 0.5em;
     padding-top: 1em;
     align-self: end;
-    background-color: lightcyan;
     animation: appearIn 0.5s;
   }
 

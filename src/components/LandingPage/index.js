@@ -4,7 +4,6 @@ import SocialBar from '../SocialBar';
 
 //illustrations
 import image1 from '../../../static/uploads/coding_.svg';
-import image2 from '../../../static/uploads/wave.svg';
 import image3 from '../../../static/uploads/undraw_design_notes_8dmv.svg';
 import image5 from '../../../static/uploads/code_development_.svg';
 
@@ -23,16 +22,11 @@ const Home = () => {
     <div>
       <div className={styles.main}>
         <div className={styles.landing_hero}>
-          <h1 className={styles.value_prop}>Main Value Prop</h1>
-
+          <h1 className={styles.value_prop}>
+            Organize and Keep track of all your Job Applications in One Place
+          </h1>
           <img className={styles.hero_illustration} src={image3} alt="" />
         </div>
-        <div className={styles.wave_bottom_hero}>
-          <img src={image2} alt="" />
-        </div>
-        <h1 className={styles.site_title}> Name of Business</h1>
-        <hr className={styles.top_line} />
-
         <div className={styles.feature1}>
           <div className={styles.feature1_text}>
             <h2>Feature #1</h2>

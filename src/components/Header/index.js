@@ -57,16 +57,17 @@ const Header = ({ props }) => {
           {/* Desktop */}
           <div className={styles.desktop_links}>
             <Link
-              to="/contact"
               className={styles.header_link}
               activeClassName={styles.header_link_active}
+              to="/contact"
             >
               Contact
             </Link>
+
             <Link
-              to="/blog"
               className={styles.header_link}
               activeClassName={styles.header_link_active}
+              to="/blog"
             >
               Blog
             </Link>
