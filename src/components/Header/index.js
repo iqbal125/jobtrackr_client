@@ -59,11 +59,24 @@ const Header = ({ props }) => {
             <Link
               className={styles.header_link}
               activeClassName={styles.header_link_active}
+              to="/about"
+            >
+              About
+            </Link>
+            <Link
+              className={styles.header_link}
+              activeClassName={styles.header_link_active}
+              to="/pricing"
+            >
+              Pricing
+            </Link>
+            <Link
+              className={styles.header_link}
+              activeClassName={styles.header_link_active}
               to="/contact"
             >
               Contact
             </Link>
-
             <Link
               className={styles.header_link}
               activeClassName={styles.header_link_active}
@@ -147,6 +160,20 @@ const Header = ({ props }) => {
       {navLinks && (
         <>
           <div className={isHome ? styles.dropdown_home : styles.dropdown_not_home}>
+            <Link
+              className={styles.header_links_mobile}
+              activeClassName={styles.header_link_active}
+              to="/about"
+            >
+              About
+            </Link>
+            <Link
+              className={styles.header_links_mobile}
+              activeClassName={styles.header_link_active}
+              to="/pricing"
+            >
+              Pricing
+            </Link>
             <Link
               to="/contact"
               className={styles.header_links_mobile}

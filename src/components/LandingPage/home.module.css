@@ -207,10 +207,12 @@
 
 .bar1 {
   width: 70%;
+  margin-top: 2em;
 }
 
 .bar2 {
   width: 65%;
+  margin-bottom: 2em;
 }
 
 .testimonial_bar {

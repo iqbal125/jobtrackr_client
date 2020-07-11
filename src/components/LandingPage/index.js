@@ -57,7 +57,7 @@ const Home = () => {
         </div>
         <hr className={styles.bar1} />
         <div className={styles.testimonial_bar}>
-          <h3>Join 15,000+ other Job Seekers</h3>
+          <h3>Join 15,000+ Other Job Seekers</h3>
           <p>15,000+ Job seekers trust JobTrackr to handle and organize their job search process</p>
         </div>
         <hr className={styles.bar2} />
