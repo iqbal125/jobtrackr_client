@@ -34,8 +34,11 @@ const Home = () => {
         </div>
         <div className={styles.feature1}>
           <div className={styles.feature1_text}>
-            <h2>Feature #1</h2>
-            <p>Explanation of Feature</p>
+            <h2>All Your Job Information Organized All in One Place</h2>
+            <p>
+              Keep Track of Last Follow Up Date, Status of Job and Many other Metrics with an Easy
+              to Use Interface.
+            </p>
             <button className={styles.find_out_more_button} onClick={toAboutPage}>
               Find Out More
             </button>
@@ -45,13 +48,16 @@ const Home = () => {
         <div className={styles.feature2}>
           <img className={styles.feature2_img} src={image5} alt="" />
           <div className={styles.feature2_text}>
-            <h2>Feature #2</h2>
-            <p>Explanation of Feature</p>
+            <h2>Powerful Search and Filter Features</h2>
+            <p>
+              Filter and Search Jobs by any Metric Available, Dont Waste Your Time and Remove Job
+              Applications When They Become Stale.
+            </p>
           </div>
         </div>
         <div className={styles.bottom_cta_section}>
           <div className={styles.bottom_cta_text}>
-            <h3>Get in touch to see how we can help you on your next project</h3>
+            <h3>Free to Use, No Credit Card Required</h3>
             <button className={styles.get_started_button} onClick={toLoginPage}>
               Get Started Now
             </button>

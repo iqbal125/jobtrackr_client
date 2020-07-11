@@ -11,6 +11,14 @@
     padding-bottom: 6em;
   }
 
+  .hero_illustration {
+    width: 50%;
+    height: 50%;
+    padding-right: 1em;
+    margin-right: 1.5em;
+    animation: fadeInRight 1.5s;
+  }
+
   .value_prop_col {
     display: flex;
     flex-direction: column;
@@ -20,7 +28,8 @@
   }
 
   .value_prop_button {
-    margin-top: -3.5em;
+    margin-top: -3em;
+    margin-right: 3em;
     padding: 1em 2em 1em 2em;
     border-radius: 15px;
     background-color: blue;
@@ -35,13 +44,16 @@
   .feature1 {
     display: flex;
     justify-content: center;
+    font-size: 1.2em;
   }
 
   .feature2 {
     display: flex;
     justify-content: center;
     margin-top: 5em;
+    font-size: 1.2em;
   }
+
   .feature1_text {
     margin-right: 2em;
     padding-top: 2em;
@@ -74,96 +86,18 @@
     height: 40%;
   }
 
-  .pic_section {
-    display: none;
-  }
-
-  .site_title {
-    text-align: center;
-  }
-
   .value_prop {
     padding-top: 0.5em;
     margin: 2em;
     font-size: 2.5em;
   }
 
-  .top_line {
-    width: 80%;
-    margin-top: 1em;
-  }
-
-  .hero_illustration {
-    width: 50%;
-    height: 50%;
-    padding-right: 1em;
-    margin-right: 1.5em;
-  }
-
   .wave_bottom_hero > img {
     width: 100%;
   }
 
-  .pic {
-    width: 25%;
-    height: 9em;
-    margin-bottom: 1em;
-  }
-
-  .bottom_cta_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-
-  .get_started_button {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    align-self: center;
-    width: 14em;
-    padding: 1em 1em 1em 1em;
-    background-color: white;
-    border: 1px solid blue;
-    color: blue;
-    font-weight: 900;
-    cursor: pointer;
-  }
-
   .get_started_button:hover {
     background-color: lightblue;
-  }
-
-  .find_out_more_button {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    align-self: center;
-    border-radius: 5px;
-    width: 8em;
-    padding: 0.5em 1em 0.5em 1em;
-    background-color: blue;
-    color: white;
-    border: none;
-    font-weight: 800;
-    cursor: pointer;
-  }
-
-  .bottom_cta_section {
-    margin-top: 7em;
-    margin: 2em;
-  }
-
-  .social_title {
-    text-align: center;
-    margin: 1em;
-    padding-bottom: 2em;
-  }
-
-  .social_bar {
-    padding-top: 7em;
-    margin: 1em;
   }
 }
 
@@ -181,6 +115,14 @@
     height: 20%;
   }
 
+  .hero_illustration {
+    width: 50%;
+    height: 50%;
+    padding-right: 1em;
+    margin-right: 1.5em;
+    animation: fadeInRight 1.5s;
+  }
+
   .value_prop_col {
     display: flex;
     flex-direction: column;
@@ -190,9 +132,7 @@
   }
 
   .value_prop_button {
-    margin-top: -3em;
-    margin-bottom: 3em;
-
+    margin-bottom: 4em;
     padding: 1em 2em 1em 2em;
     border-radius: 15px;
     background-color: blue;
@@ -218,12 +158,14 @@
     margin-top: 3em;
     margin: 2em;
   }
+
   .feature1_text {
-    padding-top: 2em;
-    padding-right: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2em;
+    padding-right: 1em;
+    margin: 1em;
   }
 
   .feature1_img {
@@ -234,11 +176,12 @@
   }
 
   .feature2_text {
-    padding-top: 1em;
-    padding-left: 3em;
-    flex-basis: 30%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    margin: 1em;
+    padding-right: 1em;
   }
 
   .feature2_img {
@@ -251,91 +194,76 @@
     padding-bottom: 3em;
   }
 
-  .site_title {
-    text-align: center;
-  }
-
   .value_prop {
     padding-top: 0.5em;
     margin: 2em;
     font-size: 2.5em;
   }
 
-  .top_line {
-    width: 80%;
-    margin-top: 1em;
-  }
-
-  .hero_illustration {
-    width: 50%;
-    height: 50%;
-    padding-right: 1em;
-    margin-right: 1.5em;
-  }
-
   .wave_bottom_hero > img {
     width: 100%;
   }
+}
 
-  .pic {
-    width: 25%;
-    height: 9em;
-    margin-bottom: 1em;
+.bottom_cta_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.get_started_button {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  align-self: center;
+  width: 14em;
+  padding: 1em 1em 1em 1em;
+  background-color: white;
+  border: 1px solid blue;
+  color: blue;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.find_out_more_button {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  align-self: center;
+  border-radius: 5px;
+  width: 8em;
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.bottom_cta_section {
+  margin-top: 7em;
+  margin: 2em;
+}
+
+.social_title {
+  text-align: center;
+  margin: 1em;
+  padding-bottom: 2em;
+}
+.social_bar {
+  padding-top: 7em;
+  margin: 1em;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
   }
 
-  .bottom_cta_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-
-  .get_started_button {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    align-self: center;
-    width: 14em;
-    padding: 1em 1em 1em 1em;
-    background-color: white;
-    border: 1px solid blue;
-    color: blue;
-    font-weight: 900;
-    cursor: pointer;
-  }
-
-  .get_started_button:hover {
-    background-color: lightblue;
-  }
-
-  .find_out_more_button {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    align-self: center;
-    border-radius: 5px;
-    width: 8em;
-    padding: 0.5em 1em 0.5em 1em;
-    background-color: blue;
-    color: white;
-    border: none;
-    font-weight: 800;
-    cursor: pointer;
-  }
-
-  .bottom_cta_section {
-    margin-top: 7em;
-    margin: 2em;
-  }
-
-  .social_title {
-    text-align: center;
-    margin: 1em;
-    padding-bottom: 2em;
-  }
-
-  .social_bar {
-    padding-top: 7em;
-    margin: 1em;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
