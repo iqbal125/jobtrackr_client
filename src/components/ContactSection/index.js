@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactForm from '../Form';
-import SocialBar from '../SocialBar';
 import styles from './contactsection.module.css';
 import image2 from '../../../static/uploads/wave2.svg';
 

@@ -35,6 +35,11 @@ const SideBar = props => {
     contextGeneral.closeSideDrawer();
   };
 
+  const goToAddJob = () => {
+    navigate('/app/addjob');
+    contextGeneral.closeSideDrawer();
+  };
+
   return (
     <div ref={ref} className={styles.side_drawer}>
       <div className={styles.header_photo_wrap_desk}>
@@ -46,6 +51,9 @@ const SideBar = props => {
       </div>
       <div className={styles.side_items} onClick={goToProfile}>
         Profile
+      </div>
+      <div className={styles.side_items} onClick={goToAddJob}>
+        Add Job
       </div>
       <div className={styles.side_items} onClick={logOut}>
         Logout

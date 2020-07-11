@@ -55,6 +55,12 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <hr className={styles.bar1} />
+        <div className={styles.testimonial_bar}>
+          <h3>Join 15,000+ other Job Seekers</h3>
+          <p>15,000+ Job seekers trust JobTrackr to handle and organize their job search process</p>
+        </div>
+        <hr className={styles.bar2} />
         <div className={styles.bottom_cta_section}>
           <div className={styles.bottom_cta_text}>
             <h3>Free to Use, No Credit Card Required</h3>
@@ -62,7 +68,6 @@ const Home = () => {
               Get Started Now
             </button>
           </div>
-
           <div className={styles.social_bar}>
             <h3 className={styles.social_title}> Or Connect With Us on Social Just to Chat</h3>
             <SocialBar />

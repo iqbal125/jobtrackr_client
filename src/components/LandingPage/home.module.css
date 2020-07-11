@@ -205,6 +205,23 @@
   }
 }
 
+.bar1 {
+  width: 70%;
+}
+
+.bar2 {
+  width: 65%;
+}
+
+.testimonial_bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+  align-items: center;
+  margin: 2em;
+}
+
 .bottom_cta_text {
   display: flex;
   flex-direction: column;
