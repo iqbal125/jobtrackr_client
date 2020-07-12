@@ -7,6 +7,10 @@ import image1 from '../../../static/uploads/coding_.svg';
 import image3 from '../../../static/uploads/undraw_design_notes_8dmv.svg';
 import image5 from '../../../static/uploads/code_development_.svg';
 
+import { FcLock } from 'react-icons/fc';
+import { FcMultipleDevices } from 'react-icons/fc';
+import { FcFlashAuto } from 'react-icons/fc';
+
 import styles from './home.module.css';
 
 const Home = () => {
@@ -45,6 +49,28 @@ const Home = () => {
           </div>
           <img className={styles.feature1_img} src={image1} alt="" />
         </div>
+        <hr className={styles.bar_card_row1} />
+        <div className={styles.card_row}>
+          <div className={styles.card}>
+            <div className={styles.icon}>
+              <FcMultipleDevices />
+            </div>
+            <p>Easy To Use on Mobile and Desktop</p>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.icon}>
+              <FcFlashAuto />
+            </div>
+            <p> Built with Cutting Edge Technologies</p>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.icon}>
+              <FcLock />
+            </div>
+            <p>100% Safe and Secure</p>
+          </div>
+        </div>
+        <hr className={styles.bar_card_row2} />
         <div className={styles.feature2}>
           <img className={styles.feature2_img} src={image5} alt="" />
           <div className={styles.feature2_text}>
@@ -67,10 +93,6 @@ const Home = () => {
             <button className={styles.get_started_button} onClick={toLoginPage}>
               Get Started Now
             </button>
-          </div>
-          <div className={styles.social_bar}>
-            <h3 className={styles.social_title}> Or Connect With Us on Social Just to Chat</h3>
-            <SocialBar />
           </div>
         </div>
       </div>

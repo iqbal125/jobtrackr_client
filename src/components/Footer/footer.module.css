@@ -9,6 +9,10 @@
   color: white;
 }
 
+.footer_wave {
+  width: 100%;
+}
+
 .legal_section {
   display: flex;
   flex-wrap: wrap;
@@ -18,11 +22,6 @@
 .footer_legal {
   color: white;
   padding: 1em;
-}
-
-.footer_buffer {
-  height: 3em;
-  background-color: darkpurple;
 }
 
 .footer_main {

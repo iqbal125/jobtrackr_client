@@ -45,6 +45,8 @@
     display: flex;
     justify-content: center;
     font-size: 1.2em;
+
+    background: linear-gradient(135deg, rgba(218, 247, 205, 1) 55%, rgba(173, 127, 28, 1) 100%);
   }
 
   .feature2 {
@@ -52,6 +54,7 @@
     justify-content: center;
     margin-top: 5em;
     font-size: 1.2em;
+    background-color: rgb(218, 247, 205);
   }
 
   .feature1_text {
@@ -205,14 +208,56 @@
   }
 }
 
+.card_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  margin-top: 3em;
+}
+.card > p {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.icon {
+  padding-top: 1em;
+  font-size: 4em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
+  height: 20em;
+  width: 16em;
+  align-items: center;
+  border-bottom: 2em solid blue;
+  border-radius: 2em;
+  margin: 1em;
+  padding: 1em;
+}
+
 .bar1 {
   width: 70%;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .bar2 {
   width: 65%;
   margin-bottom: 2em;
+}
+
+.bar_card_row1 {
+  margin-top: 4em;
+  width: 30%;
+}
+
+.bar_card_row2 {
+  margin-top: 2em;
+  margin-bottom: -2em;
+  width: 30%;
 }
 
 .testimonial_bar {
