@@ -222,7 +222,7 @@
 }
 
 .icon {
-  padding-top: 1em;
+  padding-top: 0.7em;
   font-size: 4em;
 }
 
@@ -234,6 +234,7 @@
   width: 16em;
   align-items: center;
   border-bottom: 2em solid blue;
+  border-top: 2em solid blue;
   border-radius: 2em;
   margin: 1em;
   padding: 1em;
