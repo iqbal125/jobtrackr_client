@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
-    height: 46em;
+    height: 48em;
     width: 16em;
     align-items: center;
     border-bottom: 2em solid blue;
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
-    height: 46em;
+    height: 48em;
     width: 16em;
     align-items: center;
     border-bottom: 2em solid blue;
@@ -63,4 +63,9 @@
   font-weight: 800;
   cursor: pointer;
   justify-self: flex-end;
+}
+
+.premium_features {
+  font-weight: bold;
+  font-size: 1.1em;
 }

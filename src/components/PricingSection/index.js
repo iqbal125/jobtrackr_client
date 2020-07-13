@@ -34,11 +34,11 @@ const PricingSection = () => {
           <hr className={styles.bar} />
           <p>Filtering and Sorting</p>
           <hr className={styles.bar} />
-          <p>Unlimited Jobs</p>
+          <p className={styles.premium_features}>Unlimited Jobs</p>
           <hr className={styles.bar} />
-          <p>Resume Upload</p>
+          <p className={styles.premium_features}>Resume Upload</p>
           <hr className={styles.bar} />
-          <p>Shareable Resume Download Link</p>
+          <p className={styles.premium_features}>Shareable Resume Download Link</p>
           <button className={styles.cta_button} onClick={() => navigate('/app/login')}>
             Buy Now
           </button>
