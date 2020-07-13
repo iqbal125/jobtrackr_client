@@ -38,8 +38,9 @@ const ContactForm = () => {
           initialValues={{ email: '', subject: '', description: '' }}
           onSubmit={handleSubmit}
         >
-          {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-            <form className={styles.form} onSubmit={handleSubmit}>
+          {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+            <form name="form1" className={styles.form} onSubmit={handleSubmit} data-netlify="true">
+              <input type="hidden" name="form1" value="form1" />
               <label className={styles.input_label} htmlFor="email">
                 Email
               </label>
