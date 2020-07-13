@@ -1,0 +1,66 @@
+@media only screen and (max-width: 900px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
+    height: 46em;
+    width: 16em;
+    align-items: center;
+    border-bottom: 2em solid blue;
+    margin: 1em;
+    padding: 1em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
+    height: 46em;
+    width: 16em;
+    align-items: center;
+    border-bottom: 2em solid blue;
+    margin: 4em;
+    padding: 1em;
+  }
+}
+
+.card_header {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 1.4em;
+}
+
+.price_title {
+  text-align: center;
+}
+
+.card_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card > p {
+  padding: 0.2em;
+  text-align: center;
+}
+
+.bar {
+  width: 50%;
+}
+
+.cta_button {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  align-self: center;
+  border-radius: 5px;
+  width: 8em;
+  padding: 1em;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  justify-self: flex-end;
+}
