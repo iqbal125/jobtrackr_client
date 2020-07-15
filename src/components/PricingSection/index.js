@@ -39,7 +39,7 @@ const PricingSection = () => {
           <p className={styles.premium_features}>Resume Upload</p>
           <hr className={styles.bar} />
           <p className={styles.premium_features}>Shareable Resume Download Link</p>
-          <button className={styles.cta_button} onClick={() => navigate('/app/login')}>
+          <button className={styles.cta_button} onClick={() => navigate('/premiumsubmit')}>
             Buy Now
           </button>
         </div>

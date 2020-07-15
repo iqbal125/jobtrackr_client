@@ -24,7 +24,7 @@ const AboutSection = () => {
             Save Unlimited Jobs, upload and manage different Resumes and have a Resume download link
             you can send to recruiters.
           </p>
-          <button className={styles.signup_button} onClick={() => navigate('/app/login')}>
+          <button className={styles.signup_button} onClick={() => navigate('/premiumsubmit')}>
             Get Premium
           </button>
         </div>
