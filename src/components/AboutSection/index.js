@@ -16,6 +16,19 @@ const AboutSection = () => {
         </div>
         <img className={styles.feature1_img} src={image1} alt="" />
       </div>
+      <div className={styles.feature2}>
+        <img className={styles.feature2_img} src={image1} alt="" />
+        <div className={styles.feature2_text}>
+          <h2>Get Additional Features with Jobtrackr Premium</h2>
+          <p>
+            Save Unlimited Jobs, upload and manage different Resumes and have a Resume download link
+            you can send to recruiters.
+          </p>
+          <button className={styles.signup_button} onClick={() => navigate('/app/login')}>
+            Get Premium
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

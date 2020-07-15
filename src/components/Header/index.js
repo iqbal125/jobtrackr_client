@@ -59,13 +59,6 @@ const Header = ({ props }) => {
             <Link
               className={styles.header_link}
               activeClassName={styles.header_link_active}
-              to="/about"
-            >
-              About
-            </Link>
-            <Link
-              className={styles.header_link}
-              activeClassName={styles.header_link_active}
               to="/pricing"
             >
               Pricing
@@ -76,6 +69,13 @@ const Header = ({ props }) => {
               to="/contact"
             >
               Contact
+            </Link>
+            <Link
+              className={styles.header_link}
+              activeClassName={styles.header_link_active}
+              to="/about"
+            >
+              About
             </Link>
             <Link
               className={styles.header_link}
@@ -163,13 +163,6 @@ const Header = ({ props }) => {
             <Link
               className={styles.header_links_mobile}
               activeClassName={styles.header_link_active}
-              to="/about"
-            >
-              About
-            </Link>
-            <Link
-              className={styles.header_links_mobile}
-              activeClassName={styles.header_link_active}
               to="/pricing"
             >
               Pricing
@@ -180,6 +173,13 @@ const Header = ({ props }) => {
               activeClassName={styles.header_link_active}
             >
               Contact
+            </Link>
+            <Link
+              className={styles.header_links_mobile}
+              activeClassName={styles.header_link_active}
+              to="/about"
+            >
+              About
             </Link>
             <Link
               to="/blog"

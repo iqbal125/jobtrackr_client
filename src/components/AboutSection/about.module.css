@@ -105,3 +105,25 @@
   cursor: pointer;
   justify-self: flex-end;
 }
+
+.card_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  margin-top: 3em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(128, 118, 118, 0.2);
+  height: 12em;
+  width: 24em;
+  align-items: center;
+  border: 0.1em solid blue;
+  border-radius: 1em;
+  margin: 3em;
+  padding: 1em;
+}
