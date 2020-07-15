@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
-import SocialBar from '../SocialBar';
 
 //illustrations
 import image1 from '../../../static/uploads/coding_.svg';
@@ -14,6 +13,11 @@ import { FcFlashAuto } from 'react-icons/fc';
 import styles from './home.module.css';
 
 const Home = () => {
+  const intersectTargetFeat1 = useRef(null);
+  const intersectTargetFeat2 = useRef(null);
+  const [feat1Intersect, setFeat1] = useState(false);
+  const [feat2Intersect, setFeat2] = useState(false);
+
   const toLoginPage = () => {
     navigate('/app/login');
   };
@@ -21,6 +25,33 @@ const Home = () => {
   const toAboutPage = () => {
     navigate('/about');
   };
+
+  useEffect(() => {
+    const opts = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    };
+    const callback = list => {
+      list.forEach(entry => {
+        let isFeat1 = entry.target.className.includes('feature1');
+        let isFeat2 = entry.target.className.includes('feature2');
+
+        if (entry.isIntersecting && isFeat1) {
+          console.log(entry);
+          console.log('feat1');
+          setFeat1(true);
+        } else if (entry.isIntersecting && isFeat2) {
+          console.log('feat2');
+          setFeat2(true);
+        }
+      });
+    };
+    const observerScroll = new IntersectionObserver(callback, opts);
+
+    observerScroll.observe(intersectTargetFeat1.current);
+    observerScroll.observe(intersectTargetFeat2.current);
+  }, []);
 
   return (
     <div>
@@ -47,7 +78,12 @@ const Home = () => {
               Find Out More
             </button>
           </div>
-          <img className={styles.feature1_img} src={image1} alt="" />
+          <img
+            ref={intersectTargetFeat1}
+            className={feat1Intersect ? styles.feature1_img : styles.feature1_img_none}
+            src={image1}
+            alt=""
+          />
         </div>
         <hr className={styles.bar_card_row1} />
         <div className={styles.card_row}>
@@ -71,8 +107,12 @@ const Home = () => {
           </div>
         </div>
         <hr className={styles.bar_card_row2} />
-        <div className={styles.feature2}>
-          <img className={styles.feature2_img} src={image5} alt="" />
+        <div ref={intersectTargetFeat2} className={styles.feature2}>
+          <img
+            className={feat2Intersect ? styles.feature2_img : styles.feature2_img_none}
+            src={image5}
+            alt=""
+          />
           <div className={styles.feature2_text}>
             <h2>Powerful Search and Filter Features</h2>
             <p>
@@ -80,6 +120,14 @@ const Home = () => {
               Applications When They Become Stale.
             </p>
           </div>
+          <img
+            ref={intersectTargetFeat2}
+            className={
+              feat2Intersect ? styles.feature2_img_mobile : styles.feature2_img_mobile_none
+            }
+            src={image5}
+            alt=""
+          />
         </div>
         <hr className={styles.bar1} />
         <div className={styles.testimonial_bar}>
