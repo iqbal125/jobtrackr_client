@@ -65,17 +65,6 @@
     flex-direction: column;
   }
 
-  .feature1_img {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    width: 40%;
-    height: 40%;
-  }
-
-  .feature1_img_none {
-    display: none;
-  }
-
   .feature2_text {
     padding-top: 1em;
     padding-left: 3em;
@@ -84,17 +73,38 @@
     flex-direction: column;
   }
 
+  /* Landing Page Pics and Animations*/
+
+  .feature1_img {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 25em;
+    height: 25em;
+    animation: fadeInRight 1.5s;
+  }
+
   .feature2_img {
     padding-top: 2em;
     padding-bottom: 2em;
     margin-right: 3em;
-    width: 40%;
-    height: 40%;
+    width: 22em;
+    height: 22em;
+    animation: fadeInLeft 1.5s;
+  }
+
+  .img_container {
+    flex-basis: 40%;
+  }
+
+  .feature1_img_none {
+    opacity: 0;
   }
 
   .feature2_img_none {
-    display: none;
+    opacity: 0;
   }
+
+  /* Mobile Only */
 
   .feature2_img_mobile {
     display: none;
@@ -103,6 +113,8 @@
   .feature2_img_mobile_none {
     display: none;
   }
+
+  /* Landing Img End */
 
   .value_prop {
     padding-top: 0.5em;
@@ -186,18 +198,6 @@
     margin: 1em;
   }
 
-  .feature1_img {
-    padding-top: 5em;
-    padding-bottom: 2em;
-    width: 60%;
-    height: 60%;
-    animation: fadeInRight 1s;
-  }
-
-  .feature1_img_none {
-    display: none;
-  }
-
   .feature2_text {
     display: flex;
     flex-direction: column;
@@ -207,27 +207,42 @@
     padding-right: 1em;
   }
 
-  .feature2_img {
-    display: none;
+  /* Landing Page Pics and Animations*/
+
+  .feature1_img {
+    padding-top: 5em;
+    padding-bottom: 2em;
+    width: 25em;
+    height: 25em;
+    animation: fadeInRight 1s;
   }
 
   .feature2_img_mobile {
     padding-top: 5em;
     padding-bottom: 2em;
-    width: 60%;
-    height: 60%;
+    width: 25em;
+    height: 25em;
+    animation: fadeInRight 1s;
+  }
+
+  .feature1_img_none {
+    opacity: 0;
   }
 
   .feature2_img_mobile_none {
+    opacity: 0;
+  }
+
+  /* Desktop Only */
+  .feature2_img {
     display: none;
   }
 
-  .pic_section {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 6em;
-    padding-bottom: 3em;
+  .feature2_img_none {
+    display: none;
   }
+
+  /* Landing Img End */
 
   .value_prop {
     padding-top: 0.5em;
@@ -358,6 +373,18 @@
   from {
     opacity: 0;
     transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
 
   to {

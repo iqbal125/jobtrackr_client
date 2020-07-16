@@ -30,7 +30,7 @@ const Home = () => {
     const opts = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.3
+      threshold: 0.5
     };
     const callback = list => {
       list.forEach(entry => {
@@ -38,10 +38,11 @@ const Home = () => {
         let isFeat2 = entry.target.className.includes('feature2');
 
         if (entry.isIntersecting && isFeat1) {
-          console.log(entry);
           console.log('feat1');
           setFeat1(true);
-        } else if (entry.isIntersecting && isFeat2) {
+        }
+        if (entry.isIntersecting && isFeat2) {
+          console.log(entry);
           console.log('feat2');
           setFeat2(true);
         }
@@ -65,6 +66,7 @@ const Home = () => {
               Try For Free Now &#8594;
             </button>
           </div>
+
           <img className={styles.hero_illustration} src={image3} alt="" />
         </div>
         <div className={styles.feature1}>
@@ -78,12 +80,14 @@ const Home = () => {
               Find Out More
             </button>
           </div>
-          <img
-            ref={intersectTargetFeat1}
-            className={feat1Intersect ? styles.feature1_img : styles.feature1_img_none}
-            src={image1}
-            alt=""
-          />
+          <div className={styles.img_container}>
+            <img
+              ref={intersectTargetFeat1}
+              className={feat1Intersect ? styles.feature1_img : styles.feature1_img_none}
+              src={image1}
+              alt=""
+            />
+          </div>
         </div>
         <hr className={styles.bar_card_row1} />
         <div className={styles.card_row}>
@@ -108,11 +112,13 @@ const Home = () => {
         </div>
         <hr className={styles.bar_card_row2} />
         <div ref={intersectTargetFeat2} className={styles.feature2}>
-          <img
-            className={feat2Intersect ? styles.feature2_img : styles.feature2_img_none}
-            src={image5}
-            alt=""
-          />
+          <div className={styles.img_container}>
+            <img
+              className={feat2Intersect ? styles.feature2_img : styles.feature2_img_none}
+              src={image5}
+              alt=""
+            />
+          </div>
           <div className={styles.feature2_text}>
             <h2>Powerful Search and Filter Features</h2>
             <p>
