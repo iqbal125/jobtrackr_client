@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import { graphql, Link } from 'gatsby';
 import PostList from '../components/PostList';
 import styles from './styles/blog.module.css';
-import { AiFillStar } from 'react-icons/ai';
 
 const BlogIndex = props => {
   const edges = props.data.allMarkdownRemark.edges;
@@ -14,43 +13,33 @@ const BlogIndex = props => {
 
   return (
     <Layout title="Blog" description="All the posts">
-      <div className={styles.blog_layout}>
-        <div className={styles.blog_post_column}>
-          <h2>Latest Posts:</h2>
-          {edges
-            ? edges.map(edge => (
-                <PostList
-                  key={edge.node.id}
-                  excerpt={edge.node.excerpt}
-                  post={edge.node.frontmatter}
-                />
-              ))
-            : null}
-          <div className={styles.pagination_row}>
-            {!isFirstPage && (
-              <div className={styles.previous}>
-                <Link to={previousPagePath}>More Recent Posts </Link>
-              </div>
-            )}
+      <div className={styles.blog_post_column}>
+        <h2>Latest Posts:</h2>
+        {edges
+          ? edges.map(edge => (
+              <PostList
+                key={edge.node.id}
+                excerpt={edge.node.excerpt}
+                post={edge.node.frontmatter}
+              />
+            ))
+          : null}
+        <div className={styles.pagination_row}>
+          {!isFirstPage && (
+            <div className={styles.previous}>
+              <Link className={styles.page_change} to={previousPagePath}>
+                More Recent Posts
+              </Link>
+            </div>
+          )}
 
-            {!isLastPage && (
-              <div className={styles.next}>
-                <Link to={nextPagePath}>Older Posts</Link>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className={styles.top_posts}>
-          <h3>Top Posts</h3>
-
-          <div>Link 1</div>
-          <div>Link 2</div>
-          <div>Link 3</div>
-          <div className={styles.icon}>
-            <AiFillStar />
-          </div>
-          <p>Example Recognition of Blog</p>
-          <p>"One of The Best Blogs"</p>
+          {!isLastPage && (
+            <div className={styles.next}>
+              <Link className={styles.page_change} to={nextPagePath}>
+                Older Posts
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </Layout>
@@ -78,8 +67,8 @@ export const query = graphql`
             heading
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 1200) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 125, height: 125) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

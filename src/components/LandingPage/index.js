@@ -30,7 +30,7 @@ const Home = () => {
     const opts = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5
+      threshold: 0.7
     };
     const callback = list => {
       list.forEach(entry => {

@@ -11,8 +11,7 @@ const BlogTemplate = ({ data }) => {
   const { siteUrl } = siteMetadata;
   const { frontmatter, html, excerpt, id } = data.markdownRemark;
   const { title, date, author, tags, path, heading } = frontmatter;
-  const image = frontmatter.featuredImage.childImageSharp.fluid;
-  console.log(frontmatter);
+  const image = frontmatter.featuredImage.childImageSharp.fixed;
 
   const seoData = {
     title,
@@ -39,6 +38,7 @@ const BlogTemplate = ({ data }) => {
           </small>
           <h2 className={styles.heading}>{heading}</h2>
           <div dangerouslySetInnerHTML={{ __html: html }} />
+          <br />
           <TagsList tags={tags} />
           <br />
           <br />
@@ -71,8 +71,8 @@ export const pageQuery = graphql`
         heading
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 125, height: 125) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
