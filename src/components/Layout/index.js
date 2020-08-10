@@ -19,7 +19,7 @@ const Layout = ({ props, title, description, children }) => {
     <>
       <SEO seoData={seoData} />
       {isOpen && <SideBar />}
-      <div className={isOpen ? styles.layout_fade : styles.layout}>
+      <div className={isOpen ? styles.layout_fade : ''}>
         <Header props={{ ...props }} />
         <main>{children}</main>
         <Footer />
