@@ -77,13 +77,6 @@ const Header = ({ props }) => {
             >
               About
             </Link>
-            <Link
-              className={styles.header_link}
-              activeClassName={styles.header_link_active}
-              to="/blog"
-            >
-              Blog
-            </Link>
           </div>
           {/* Mobile */}
           <div className={styles.mobile_logo}>
@@ -95,11 +88,6 @@ const Header = ({ props }) => {
 
         <div className={styles.right_header}>
           {/* Desktop */}
-          <div className={styles.searchbox}>
-            <div className={styles.search}>
-              <Search />
-            </div>
-          </div>
           {!context.authState.isAuthenticated && (
             <Link to="/app/login" className={styles.login_button_desktop}>
               Login
@@ -119,41 +107,33 @@ const Header = ({ props }) => {
               )}
             </div>
           )}
-        </div>
-        {/* Mobile */}
-        <div className={styles.mobile_search}>
-          {search && (
-            <div className={isHome ? styles.search_home : styles.search_not_home}>
-              <Search />
-            </div>
-          )}
-          <div onClick={searchHandler} className={styles.search_icon}>
-            <FcSearch />
-          </div>
-          {!context.authState.isAuthenticated && (
-            <Link
-              to="/app/login"
-              className={styles.login_button_mobile}
-              activeClassName={styles.login_button_active}
-            >
-              Login
-            </Link>
-          )}
+          {/* Mobile */}
+          <div>
+            {!context.authState.isAuthenticated && (
+              <Link
+                to="/app/login"
+                className={styles.login_button_mobile}
+                activeClassName={styles.login_button_active}
+              >
+                Login
+              </Link>
+            )}
 
-          {context.authState.isAuthenticated && (
-            <div className={styles.header_photo_wrap_mobile}>
-              {context.authState.user.photo ? (
-                <img
-                  src={context.authState.user.photo}
-                  onClick={menuHandler}
-                  className={styles.header_photo}
-                  alt="Not Found"
-                />
-              ) : (
-                <MdAccountCircle className={styles.header_photo} onClick={menuHandler} />
-              )}
-            </div>
-          )}
+            {context.authState.isAuthenticated && (
+              <div className={styles.header_photo_wrap_mobile}>
+                {context.authState.user.photo ? (
+                  <img
+                    src={context.authState.user.photo}
+                    onClick={menuHandler}
+                    className={styles.header_photo}
+                    alt="Not Found"
+                  />
+                ) : (
+                  <MdAccountCircle className={styles.header_photo} onClick={menuHandler} />
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </header>
       {/* Mobile Hamburger Links*/}
@@ -180,13 +160,6 @@ const Header = ({ props }) => {
               to="/about"
             >
               About
-            </Link>
-            <Link
-              to="/blog"
-              className={styles.header_links_mobile}
-              activeClassName={styles.header_link_active}
-            >
-              Blog
             </Link>
           </div>
         </>

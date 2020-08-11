@@ -1,16 +1,16 @@
 /* Desktop Header */
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .header_home {
     display: grid;
-    grid-template-columns: [left_header] 1fr [mid_header] 1fr [right_header] 1fr;
+    grid-template-columns: auto auto auto;
     padding: 0.5em;
   }
 
   .header_not_home {
     border-bottom: lightgrey 0.5px dotted;
     display: grid;
-    grid-template-columns: [left_header] 1fr [mid_header] 1fr [right_header] 1fr;
+    grid-template-columns: auto auto auto;
     padding: 0.5em;
     margin-bottom: 2em;
   }
@@ -19,21 +19,21 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .left_header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .mid_header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   /* header links */
@@ -119,17 +119,17 @@
 
 /* Mobile Header */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .header_home {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto;
     padding: 0.5em;
   }
 
   .header_not_home {
     border-bottom: lightgrey 0.5px dotted;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto;
     padding: 0.5em;
     margin-bottom: 2em;
   }
@@ -139,15 +139,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    flex-basis: 33%;
   }
 
   .left_header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-basis: 33%;
+    justify-content: flex-start;
   }
 
   .mid_header {
@@ -155,7 +153,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-basis: 33%;
   }
 
   .search_home {
@@ -231,10 +228,6 @@
 
   .header_link_active {
     border-bottom: 1px solid red;
-  }
-
-  .mobile_search {
-    display: flex;
   }
 
   .desktop_logo {
