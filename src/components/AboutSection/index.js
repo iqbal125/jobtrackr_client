@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './about.module.css';
-import image1 from '../../../static/uploads/coding_.svg';
+import image1 from '../../../static/uploads/undraw_survey_05s5.svg';
+import image2 from '../../../static/uploads/undraw_stepping_up_g6oo.svg';
 import { navigate } from 'gatsby';
 
 const AboutSection = () => {
@@ -17,7 +18,7 @@ const AboutSection = () => {
         <img className={styles.feature1_img} src={image1} alt="" />
       </div>
       <div className={styles.feature2}>
-        <img className={styles.feature2_img} src={image1} alt="" />
+        <img className={styles.feature2_img} src={image2} alt="" />
         <div className={styles.feature2_text}>
           <h2>Get Additional Features with Jobtrackr Premium</h2>
           <p>
