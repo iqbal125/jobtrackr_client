@@ -2,12 +2,11 @@ import React, { useState, useContext } from 'react';
 import styles from './header.module.css';
 
 import { Link } from 'gatsby';
-import Search from '../Search';
+
 import AuthContext from '../../utils/auth_context';
 import GeneralContext from '../../utils/general_context';
 import logo from '../../../static/logos/favicon.ico';
 
-import { FcSearch } from 'react-icons/fc';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdAccountCircle } from 'react-icons/md';

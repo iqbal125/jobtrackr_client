@@ -45,7 +45,8 @@
     display: flex;
     justify-content: center;
     font-size: 1.2em;
-    background: linear-gradient(135deg, rgba(218, 247, 205, 1) 55%, rgba(173, 127, 28, 1) 100%);
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
   }
 
   .feature2 {
@@ -53,7 +54,8 @@
     justify-content: center;
     margin-top: 5em;
     font-size: 1.2em;
-    background-color: rgb(218, 247, 205);
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
   }
 
   .feature1_text {
