@@ -1,4 +1,4 @@
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .main {
     display: flex;
     flex-direction: column;
@@ -133,10 +133,11 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .main {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   .landing_hero {
@@ -145,6 +146,11 @@
     justify-content: center;
     align-items: center;
     height: 20%;
+  }
+
+  .value_prop_col > h1 {
+    font-size: 2em;
+    text-align: center;
   }
 
   .hero_illustration {
@@ -214,16 +220,16 @@
   .feature1_img {
     padding-top: 5em;
     padding-bottom: 2em;
-    width: 25em;
-    height: 25em;
+    width: 21em;
+    height: 21em;
     animation: fadeInRight 1s;
   }
 
   .feature2_img_mobile {
     padding-top: 5em;
     padding-bottom: 2em;
-    width: 25em;
-    height: 25em;
+    width: 21em;
+    height: 21em;
     animation: fadeInRight 1s;
   }
 
@@ -327,6 +333,7 @@
   align-items: center;
   font-size: 1.5em;
   font-weight: 600;
+  text-align: center;
 }
 
 .get_started_button {
