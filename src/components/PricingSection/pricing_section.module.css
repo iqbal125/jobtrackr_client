@@ -1,4 +1,4 @@
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .card {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +34,14 @@
 
 .price_title {
   text-align: center;
+  padding: 1em;
+  margin: 1em;
 }
 
 .card_row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card > p {
