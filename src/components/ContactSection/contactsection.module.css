@@ -1,1 +1,8 @@
+.page_column {
+  padding: 1em;
+  margin: 1em;
+}
 
+.page_column > h2 {
+  text-align: center;
+}

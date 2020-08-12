@@ -28,9 +28,6 @@ const Footer = () => {
             <Link to="/about">
               <div className={styles.footer_link}>About</div>
             </Link>
-            <Link to="/blog">
-              <div className={styles.footer_link}>Blog</div>
-            </Link>
           </div>
         </div>
         <div className={styles.footer_bottom}>
