@@ -18,8 +18,6 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = event => {
-    event.preventDefault();
-    console.log('ffff');
     setLoading(true);
     setTimeout(() => navigate('/formsubmit'), 800);
   };
